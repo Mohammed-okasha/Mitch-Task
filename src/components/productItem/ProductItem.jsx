@@ -35,9 +35,9 @@ const ProductItem = ({ product }) => {
           onClick={addToCartHandler}
           disabled={!isAvailable}
         >
-          {isAvailable ? "أضف الى السلة" : "نفذت الكمية"}
+          {isAvailable ? "أضافة للسلة" : "نفذت الكمية"}
         </Button>
-        <IconButton sx={{ ml: "0 !important" }}>
+        <IconButton size="small" sx={{ ml: "0 !important" }}>
           <FavoriteIcon />
         </IconButton>
       </CardActions>
