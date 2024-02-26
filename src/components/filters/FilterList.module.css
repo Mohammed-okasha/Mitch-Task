@@ -1,0 +1,24 @@
+.filter-list {
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  overflow: auto;
+  white-space: nowrap;
+  padding-bottom: 1rem;
+}
+
+.filter-list::-webkit-scrollbar {
+  height: 8px;
+}
+
+.filter-list::-webkit-scrollbar-track {
+  background-color: #eee;
+}
+
+.filter-list::-webkit-scrollbar-thumb {
+  background-color: var(--main);
+}
+
+.filter-list::-webkit-scrollbar-track,
+.filter-list::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+}
