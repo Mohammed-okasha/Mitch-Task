@@ -6,7 +6,7 @@ import CartButton from "./CartButton";
 
 const MainHeader = () => {
   return (
-    <Box component="header" py={3}>
+    <Box component="header" py={2}>
       <Container maxWidth="lg">
         <Stack
           direction="row"

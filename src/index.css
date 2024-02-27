@@ -74,6 +74,16 @@ button:disabled {
   font-weight: bold;
 }
 
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.192);
+  background-color: #fff;
+  z-index: 10;
+}
+
 .Toastify__toast-container {
   text-align: right;
   right: 0 !important;

@@ -13,12 +13,11 @@ const productsReducer = (state, action) => {
       };
 
     case "FILTER_PRODUCTS":
-      const isSameCategory = action.selectedCategory === state.category;
       return {
         ...state,
         // Reset products_per_page
         products_per_page: PRODUCTS_PER_PAGE,
-        category: isSameCategory ? "" : action.selectedCategory,
+        category: action.selectedCategory,
         searchQuery: "",
       };
 

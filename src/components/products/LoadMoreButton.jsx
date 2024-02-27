@@ -25,7 +25,6 @@ const LoadMoreButton = () => {
   const loadMoreHandler = () => {
     const payload = {
       category,
-      // keyword: searchQuery,
       products_per_page: products_per_page + NUM_OF_LOADING,
     };
 
@@ -38,12 +37,11 @@ const LoadMoreButton = () => {
         return;
       }
 
-      // if this true => this will load found products then close load more button
-      console.log(loadedProductsCount % NUM_OF_LOADING);
-      if (loadedProductsCount % NUM_OF_LOADING !== 0) {
+      // if this true => this will load remaining products then close load more button
+      if (loadedProductsCount % NUM_OF_LOADING > 0) {
         dispatch({
           type: "LOAD_MORE_PRODUCTS",
-          payload: result.slice(NUM_OF_LOADING), // slice(NUM_OF_LOADING)
+          payload: result.slice(NUM_OF_LOADING),
         });
 
         setCanLoadMore(false);
@@ -51,7 +49,7 @@ const LoadMoreButton = () => {
         // in this case There are more products, so user can load more
         dispatch({
           type: "LOAD_MORE_PRODUCTS",
-          payload: result.slice(products_per_page), // slice(products_per_page)
+          payload: result.slice(products_per_page),
         });
       }
     });

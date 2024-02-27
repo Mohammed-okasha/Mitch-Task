@@ -1,5 +1,6 @@
 import { useProducts } from "../../context/providers/ProductsProvider";
 import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
 import FilterList from "../filters/FilterList";
 import ProductList from "./ProductList";
 import Loading from "../ui/Loading";
@@ -16,7 +17,7 @@ const ProductsController = () => {
     dispatch,
   } = useProducts();
 
-  if (error) return <h1>{error}</h1>;
+  if (error) return <Typography textAlign="center">{error}</Typography>;
 
   return (
     <Box pb={5}>

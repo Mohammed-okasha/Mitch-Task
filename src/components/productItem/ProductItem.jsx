@@ -25,7 +25,6 @@ const ProductItem = ({ product }) => {
       <Box>
         <img src={imageSrc} alt={ar_name} />
       </Box>
-
       <ProductContent name={ar_name} price={price} salePrice={sale_price} />
 
       <CardActions>
