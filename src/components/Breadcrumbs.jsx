@@ -1,9 +1,9 @@
-import { Typography } from "@mui/material";
+import Typography from "@mui/material/Typography";
 import MuiBreadcrumbs from "@mui/material/Breadcrumbs";
 
 const Breadcrumbs = () => {
   return (
-    <MuiBreadcrumbs aria-label="breadcrumb" separator=">">
+    <MuiBreadcrumbs aria-label="breadcrumb" separator=">" sx={{ pt: 3 }}>
       <Typography variant="body1">
         <a href="#/">الرئيسية</a>
       </Typography>
