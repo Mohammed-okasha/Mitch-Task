@@ -1,7 +1,7 @@
 import React, { useReducer, useContext, useCallback } from "react";
 import useFetch from "../../hooks/useFetch";
 import productsReducer from "../reducers/products-reducer";
-import { generateCategories } from "../../utils/helpers";
+// import { generateCategories } from "../../utils/helpers";
 
 const initialProductsState = {
   products: [],
@@ -44,14 +44,30 @@ const ProductsProvider = ({ children }) => {
     );
   }
 
+  const currentProductsCount = filteredProducts.length;
+
+  const uniqueCategories = !products.length
+    ? []
+    : products.reduce(
+        (arr, products) => {
+          const { category_slug, category_name_ar } = products;
+
+          if (!arr.map((el) => el.category_slug).includes(category_slug))
+            return [...arr, { category_slug, category_name_ar }];
+
+          return arr;
+        },
+        [{ category_slug: "", category_name_ar: "جميع الحلويات" }]
+      );
+
   const productsCtx = {
     products: filteredProducts,
     category,
     searchQuery,
     products_per_page,
-    categories: generateCategories(products),
-    currentProductsCount: filteredProducts.length,
-    disableUserActions: filteredProducts.length === 0,
+    categories: uniqueCategories, // generateCategories(products)
+    currentProductsCount,
+    disableUserActions: !currentProductsCount,
     isLoading,
     error,
     dispatch,
