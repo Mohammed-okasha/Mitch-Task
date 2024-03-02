@@ -3,7 +3,7 @@ Mitch Online Store
 Description:
 Mitch Online Store is a responsive web application designed to facilitate online shopping by providing users with an intuitive interface to browse, filter, and purchase products. The app features a range of functionalities including filtering products by category, loading more products dynamically, searching for products, and adding items to the shopping cart.
 
-#Features:
+## Features:
 
 1- Filter Products by Category:
 * Users can easily filter products based on different categories, This feature enhances user experience by allowing them to quickly find products of interest.
