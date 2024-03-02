@@ -17,6 +17,8 @@ Features:
  4- Search Products:
  * Users can search for products by product name in the search field.
 
+5- for UI style I used Material UI and CSS Module
+
 
 ## Important Notes:
 - keyword (search) endpoint not working, so I made the search feature only on the client side.
