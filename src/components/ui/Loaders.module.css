@@ -1,3 +1,7 @@
+:root {
+  --border-color: #dcddeb;
+}
+
 .loading-wrapper {
   height: 300px;
   display: grid;
@@ -11,7 +15,7 @@
   display: grid;
   border: 5.8px solid #0000;
   border-radius: 50%;
-  border-color: #dcddeb #0000;
+  border-color: var(--border-color) var(--main);
   animation: loading-e04l1k 1s infinite linear;
 }
 
@@ -25,7 +29,7 @@
 }
 
 .loading::before {
-  border-color: #15234a #0000;
+  border-color: var(--main) #0000;
   animation: inherit;
   animation-duration: 0.5s;
   animation-direction: reverse;
@@ -45,10 +49,11 @@
 .spinner {
   width: 24px;
   height: 24px;
+  margin: 0 auto;
   border-radius: 50%;
   border: 3.8px solid;
-  border-color: #eeeeee;
-  border-right-color: #8390b4;
+  border-color: var(--border-color);
+  border-right-color: var(--main);
   animation: spinner-d3wgkg 0.8s infinite linear;
 }
 

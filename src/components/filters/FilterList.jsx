@@ -1,6 +1,6 @@
 import Stack from "@mui/material/Stack";
-import Button from "@mui/material/Button";
 import classes from "./FilterList.module.css";
+import CancelIcon from "@mui/icons-material/Cancel";
 
 const FilterList = (props) => {
   const {
@@ -20,13 +20,14 @@ const FilterList = (props) => {
 
     return (
       <li key={cat.category_slug}>
-        <Button
-          variant={activeCategory ? "contained" : "outlined"}
+        <button
+          className="btn light-bg"
           onClick={() => dispatch(categoryAction)}
           disabled={loading || disableUserActions}
         >
           {cat.category_name_ar}
-        </Button>
+          {activeCategory && <CancelIcon fontSize="small" />}
+        </button>
       </li>
     );
   });

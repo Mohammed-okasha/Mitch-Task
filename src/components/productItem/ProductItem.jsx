@@ -6,6 +6,7 @@ import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import FavoriteIcon from "@mui/icons-material/FavoriteBorder";
+import ZoomIcon from "../ui/ZoomIcon";
 import { notification } from "../../utils/helpers";
 
 const ProductItem = ({ product }) => {
@@ -22,22 +23,26 @@ const ProductItem = ({ product }) => {
 
   return (
     <Card>
-      <Box>
+      <Box className="card-header">
         <img src={imageSrc} alt={ar_name} />
+        <button className="outlined-btn circle zoom-btn">
+          <ZoomIcon />
+        </button>
       </Box>
       <ProductContent name={ar_name} price={price} salePrice={sale_price} />
 
-      <CardActions>
+      <CardActions sx={{ gap: 1 }}>
         <Button
           variant="contained"
           fullWidth
+          sx={{ justifyContent: "flex-start", py: 1 }}
           onClick={addToCartHandler}
           disabled={!isAvailable}
         >
-          {isAvailable ? "أضافة للسلة" : "نفذت الكمية"}
+          {isAvailable ? "إضافة للسلة" : "نفذت الكمية"}
         </Button>
-        <IconButton size="small" sx={{ ml: "0 !important" }}>
-          <FavoriteIcon />
+        <IconButton>
+          <FavoriteIcon sx={{ fill: "#163300" }} />
         </IconButton>
       </CardActions>
     </Card>

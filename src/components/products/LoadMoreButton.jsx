@@ -2,7 +2,6 @@ import { useProducts } from "../../context/providers/ProductsProvider";
 import { useHttp } from "../../hooks/useHttp";
 import { useState, useEffect } from "react";
 import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
 import Spinner from "../ui/Spinner";
 import Typography from "@mui/material/Typography";
 
@@ -72,19 +71,19 @@ const LoadMoreButton = () => {
   }, [currentProductsCount, searchQuery]);
 
   // require to disable load more button in this cases
-  const requireToDisable = isLoading || !canLoadMore || disableUserActions;
+  const requireToDisable =
+    isLoadMore || isLoading || !canLoadMore || disableUserActions;
 
   return (
     <Box textAlign="center" mt={5}>
-      <Button
-        variant="contained"
-        size="large"
-        role="load-products"
+      <button
+        className="btn outlined-btn load-more"
+        aria-roledescription="load-products"
         disabled={requireToDisable}
         onClick={loadMoreHandler}
       >
         {!isLoadMore ? "عرض المزيد" : <Spinner />}
-      </Button>
+      </button>
       {!canLoadMore && (
         <Typography variant="h6" pt={1}>
           لايوجد المزيد من المنتجات...

@@ -1,5 +1,5 @@
 .filter-list {
-  gap: 1.5rem;
+  gap: 12px;
   margin-bottom: 2rem;
   overflow: auto;
   white-space: nowrap;

@@ -6,13 +6,9 @@ import CartButton from "./CartButton";
 
 const MainHeader = () => {
   return (
-    <Box component="header" py={2}>
+    <Box component="header" py={3}>
       <Container maxWidth="lg">
-        <Stack
-          direction="row"
-          justifyContent="space-between"
-          alignItems="center"
-        >
+        <Stack direction="row" alignItems="center" gap={2}>
           <SearchBar />
           <CartButton />
         </Stack>

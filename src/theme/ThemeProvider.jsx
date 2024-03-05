@@ -7,12 +7,45 @@ import CssBaseline from "@mui/material/CssBaseline";
 
 let theme = createTheme({
   palette: {
-    primary: { main: "#15234a", dark: "#111c3b", light: "#444f6e" },
-    secondary: { main: "#c5a45f", dark: "#9e834c", light: "#d1b67f" },
+    primary: { main: "#163300", dark: "#122900", light: "#185039" },
+    secondary: { main: "#EDC843", dark: "#bea036", light: "#f4de8e" },
   },
   typography: {
     htmlFontSize: 11,
-    fontFamily: ["Cairo, Roboto"].join(","),
+    fontFamily: ["Baloo Bhaijaan 2", "Roboto", "sans-serif"].join(","),
+  },
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          boxShadow: "unset",
+          borderRadius: 100,
+          ":hover": { boxShadow: "unset" },
+        },
+      },
+      defaultProps: {
+        disableRipple: true,
+      },
+    },
+
+    MuiCard: {
+      styleOverrides: {
+        root: {
+          boxShadow: "unset",
+          border: "2px solid #D9D9D9",
+          borderRadius: 20,
+        },
+      },
+    },
+
+    MuiIconButton: {
+      styleOverrides: {
+        root: {
+          backgroundColor: "#edefeb",
+          ":hover": { backgroundColor: "#dedede" },
+        },
+      },
+    },
   },
 });
 
