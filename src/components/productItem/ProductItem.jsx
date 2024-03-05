@@ -1,4 +1,5 @@
 import { useCart } from "../../context/providers/CartProvider";
+import useMediaQuery from "@mui/material/useMediaQuery";
 import Card from "@mui/material/Card";
 import ProductContent from "./ProductContent";
 import CardActions from "@mui/material/CardActions";
@@ -11,6 +12,7 @@ import { notification } from "../../utils/helpers";
 
 const ProductItem = ({ product }) => {
   const { addToCart } = useCart();
+  const isMobileScreen = useMediaQuery("(max-width: 600px)");
   const { main_image, ar_name, price, sale_price, availability } = product;
 
   const isAvailable = availability === "instock";
@@ -35,7 +37,9 @@ const ProductItem = ({ product }) => {
         <Button
           variant="contained"
           fullWidth
-          sx={{ justifyContent: "flex-start", py: 1 }}
+          sx={{
+            justifyContent: !isMobileScreen ? "flex-start" : "center",
+          }}
           onClick={addToCartHandler}
           disabled={!isAvailable}
         >
