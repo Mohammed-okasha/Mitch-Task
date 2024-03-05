@@ -9,7 +9,7 @@
 
 @media (max-width: 767px) {
   .search-bar {
-    flex-basis: 100%;
+    flex: 1 0 0;
   }
 }
 

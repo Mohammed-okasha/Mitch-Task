@@ -21,6 +21,7 @@ let theme = createTheme({
           boxShadow: "unset",
           borderRadius: 100,
           ":hover": { boxShadow: "unset" },
+          padding: "8px 10px",
         },
       },
       defaultProps: {

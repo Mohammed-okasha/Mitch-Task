@@ -42,7 +42,7 @@ const ProductItem = ({ product }) => {
           {isAvailable ? "إضافة للسلة" : "نفذت الكمية"}
         </Button>
         <IconButton>
-          <FavoriteIcon sx={{ fill: "#163300" }} />
+          <FavoriteIcon fontSize="small" sx={{ fill: "#163300" }} />
         </IconButton>
       </CardActions>
     </Card>
